@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //          Escribir un programa JavaScript en el que el programa escoge al azar un entero entre
+      // 1 y 10, el usuario , luego a el usuario se le pedirá que introduzca un número en un
+      // popup para intentar adivinarlo. Si la entrada del usuario coincide con el número de
+      // conjetura, el programa mostrará un mensaje de "buen trabajo" de lo contrario
+      // mostrará un mensaje de "No corresponde"
+
+      let randomNumber = parseInt(Math.random() * 10 + 1);
+      console.log(randomNumber);
+
+      let inputNumber = parseInt(prompt("Ingresar numero"));
+
+      randomNumber === inputNumber
+        ? alert("Buen trabajo")
+        : alert("No corresponde");
+    </script>
+  </body>
+</html>
