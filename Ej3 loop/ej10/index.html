@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // ● Generar los primeros N números
+      // primos, donde n es ingresado por el
+      // usuario.
+
+      let inputNumber = parseInt(prompt("Input number"));
+
+      let primaryList = [1];
+
+      let endFor = 3;
+
+      for (let index = 2; index < endFor; index++) {
+        let value = index;
+        let arrayTest = [];
+
+        for (let i = 1; i <= value; i++) {
+          if (value % i === 0) {
+            arrayTest.push(i);
+          }
+        }
+
+        if (arrayTest.length === 2) {
+          primaryList.push(index);
+        }
+
+        if (primaryList.length === inputNumber) {
+          console.log(primaryList);
+        } else {
+          endFor = endFor + 1;
+        }
+      }
+    </script>
+  </body>
+</html>

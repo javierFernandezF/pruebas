@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //     Crear un programa que determine si un
+      // número es perfecto o no, (se dice que un
+      // número es perfecto si el número es igual a
+      // sus divisores, ejemplos 6 = 1 + 2 + 3)
+
+      let number = parseInt(prompt("Input number"));
+
+      let arrayNumbers = [];
+      let arrayNumbersPlas = 0;
+
+      for (let index = 0; index <= number; index++) {
+        if (number % index === 0) {
+          arrayNumbers.push(index);
+          arrayNumbersPlas += index;
+        }
+      }
+
+      number === arrayNumbersPlas
+        ? console.log("El numero es perfecto")
+        : console.log("El numero no es perfecto");
+    </script>
+  </body>
+</html>

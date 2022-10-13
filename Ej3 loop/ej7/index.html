@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Encontrar todos los divisores de un número.
+
+      let inputNumber = parseInt(prompt("Inpunt number"));
+      let arrayNumbers = [];
+
+      for (let index = 0; index <= inputNumber; index++) {
+        inputNumber % index === 0 ? arrayNumbers.push(index) : null;
+      }
+
+      console.log(arrayNumbers);
+    </script>
+  </body>
+</html>

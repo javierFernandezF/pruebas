@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Determinar si un número ingresado por el
+      // usuario en un loop es primo o no, validar que
+      // el número ingresado sea mayor o igual a
+      // dos
+
+      let inputNumber = parseInt(prompt("Inpunt number"));
+      let arrayNumbers = [];
+
+      if (inputNumber < 2) {
+        console.log("El numero es menor a 2");
+      } else {
+        for (let index = 0; index <= inputNumber; index++) {
+          inputNumber % index === 0 ? arrayNumbers.push(index) : null;
+        }
+        console.log(arrayNumbers);
+        arrayNumbers.length === 2
+          ? console.log("El numero es primo")
+          : console.log("El numero no es primo");
+      }
+    </script>
+  </body>
+</html>
