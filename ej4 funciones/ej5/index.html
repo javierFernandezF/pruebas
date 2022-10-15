@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Pedir al usuario que ingrese un
+      // número en un prompt, hacer la
+      // suma de todos los dígitos, validar
+      // que el número ingresado no
+      // contenga letras.
+
+      const input = parseInt(prompt("Ingresar numero"));
+      let total = 0;
+
+      console.log(input);
+
+      if (!isNaN(input)) {
+        for (let index = 1; index <= input; index++) {
+          total += index;
+        }
+        console.log(total);
+      } else {
+        console.log("No fue ingresado un numero");
+      }
+    </script>
+  </body>
+</html>

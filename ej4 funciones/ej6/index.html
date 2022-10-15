@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Realizar la suma de todos los
+      // números pares entre N y M donde
+      // N y M los ingresa un usuario.
+
+      let N = parseInt(prompt("Input N"));
+      let M = parseInt(prompt("Input M"));
+
+      let plas = 0;
+
+      for (let index = N; index <= M; index++) {
+        if (index % 2 === 0) {
+          plas += index;
+        }
+      }
+
+      console.log(plas);
+    </script>
+  </body>
+</html>
