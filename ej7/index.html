@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  Existen dos arrays, cada uno con 5 palabras, generar un nuevo array con la
+      // intersección de ambos elementos. (Ejemplo: [1,2,3] unión [1,2,4] = [1,2]
+
+      const array1 = ["hola", "dos", "bolsoLocuraNacional", "chau", "cinco"];
+      const array2 = ["hola2", "dos2", "chau2", "cinco", "bolsoLocuraNacional"];
+      const array3 = [];
+      const array4 = [];
+
+      for (let index = 0; index < array1.length; index++) {
+        for (let i = 0; i < array2.length; i++) {
+          if (array1[index] === array2[i]) {
+            array3.push(array1[index]);
+          }
+        }
+      }
+      console.log(array3);
+
+      //   Existen dos arrays, cada uno con 5 palabras, generar un nuevo array con la
+      //     unión de ambos elementos, (Ejemplo: [1,2,3] unión [1,2,4] = [1,1,2,2,3,4]
+
+      for (let index = 0; index < array1.length; index++) {
+        array4.push(array1[index]);
+        array4.push(array2[index]);
+      }
+
+      console.log(array4);
+
+      // El usuario ingresa dos conjuntos de números separados por coma, el
+      // programa debe determinar si ambos conjuntos tienen la misma cantidad de
+      // números.
+
+      const input = prompt("Input number");
+      const array5 = [];
+      let string = "";
+      console.log(input.length);
+      for (let index = 0; index < input.length; index++) {
+        if (input[index] != ".") {
+          string = string + input[index];
+          console.log(string);
+        }
+        if (input[index] === ".") {
+          array5.push(string);
+          string = "";
+        }
+      }
+      array5.push(string);
+      console.log(string);
+      console.log(array5);
+
+      array5[0].length === array5[1].length
+        ? console.log("Tienen la misma cantidad de numeros")
+        : console.log("No tienen la misma cantidad de numeros");
+    </script>
+  </body>
+</html>

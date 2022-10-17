@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Crear una función que reciba un arreglo con números y devuelva un nuevo
+      // arreglo con solo los números pares, hint: utilizar reduce()
+
+      const array = [
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 87, 6, 3, 345, 6, 76, 33, 234, 534, 8, 5,
+      ];
+      const reduceArray = [];
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] % 2 === 0) {
+          reduceArray.push(array[i]);
+        }
+      }
+      console.log(reduceArray);
+      //   array.reduce((previousValue,currentValue) => ,initialValie)
+
+      //   Crear una función que reciba un arreglo con palabras, crear un nuevo arreglo
+      //     que contenga solo las palabras que empiezan con una vocal.
+
+      const wordsArray = ["hi", "do", "often", "always", "think", "want"];
+      const vocalArray = [];
+
+      const onlyVocals = (words) => {
+        for (let i = 0; i < words.length; i++) {
+          if (
+            words[i][0].toLowerCase() === "a" ||
+            words[i][0].toLowerCase() === "e" ||
+            words[i][0].toLowerCase() === "i" ||
+            words[i][0].toLowerCase() === "o" ||
+            words[i][0].toLowerCase() === "u"
+          ) {
+            vocalArray.push(words[i]);
+          }
+        }
+        console.log(vocalArray);
+      };
+
+      onlyVocals(wordsArray);
+    </script>
+  </body>
+</html>
