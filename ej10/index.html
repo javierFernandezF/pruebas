@@ -152,6 +152,112 @@
         }
         console.log(totalResult);
       };
+
+      //   Contar la cantidad de elementos dentro de una matriz
+
+      const countElements = (mat) => {
+        let count = 0;
+
+        for (let i = 0; i < mat.length; i++) {
+          for (let index = 0; index < mat[i].length; index++) {
+            count = count + 1;
+          }
+        }
+        if (mat[1].length === undefined) {
+          console.log(mat.length);
+        } else {
+          console.log(count);
+        }
+      };
+
+      //   Multiplicar una matriz por un escalar, si la matriz inicial es
+      //     [[1,2,3],[4,5,6]], al multiplicarla por dos deberíamos obtener
+      //     [[2,4,6],[8,10,12]].
+
+      const matrizForNumber = (arr, number) => {
+        let newMatriz = [];
+        if (arr[1].length === undefined) {
+          for (let index = 0; index < arr.length; index++) {
+            newMatriz.push(arr[index] * number);
+          }
+        } else {
+          for (let i = 0; i < arr.length; i++) {
+            let newVector = [];
+            for (let index = 0; index < arr[i].length; index++) {
+              newVector.push(arr[i][index] * number);
+            }
+            newMatriz.push(newVector);
+          }
+        }
+
+        console.log(newMatriz);
+      };
+
+      //   Encontrar el número mayor en una matriz.
+
+      const maxNumber = (mat) => {
+        let maxValue = 0;
+        if (mat[1].length === undefined) {
+          for (let index = 0; index < mat.length; index++) {
+            if (mat[index] > maxValue) {
+              maxValue = mat[index];
+            }
+          }
+        } else {
+          for (let i = 0; i < mat.length; i++) {
+            for (let index = 0; index < mat[i].length; index++) {
+              if (mat[i][index] > maxValue) {
+                maxValue = mat[i][index];
+              }
+            }
+          }
+        }
+        console.log(maxValue);
+      };
+
+      //   Determinar si un determinado número se encuentra dentro de una
+      //     matriz o no.
+
+      const findNumber = (arr, number) => {
+        let boolean = false;
+
+        if (arr[1].length === undefined) {
+          for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === number) {
+              console.log(
+                "El numero se encuentra en la columna " + 1 + " fila " + (i + 1)
+              );
+              boolean = true;
+            }
+          }
+        } else {
+          for (let i = 0; i < arr.length; i++) {
+            for (let index = 0; index < arr[i].length; index++) {
+              if (arr[i][index] === number) {
+                console.log(
+                  "El numero se encuentra en la columna " +
+                    (index + 1) +
+                    " fila " +
+                    (i + 1)
+                );
+                boolean = true;
+              }
+            }
+          }
+          if (!boolean) {
+            console.log("El numero no se encuentra en la matriz");
+          }
+        }
+      };
+      //   Devolver la suma de todos los elementos en la diagonal de la matriz.
+
+      const sumarDiagonal = (arr) => {
+        let plas = 0;
+        for (let i = 0; i < arr.length; i++) {
+          plas += arr[i][i];
+        }
+        console.log(plas);
+      };
     </script>
   </body>
 </html>
