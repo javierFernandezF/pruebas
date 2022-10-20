@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo">:(</p>
+    <div id="time"></div>
+
+    <script>
+      // Crear una función que reciba un arreglo como parámetro y devuelva
+      // una copia del arreglo.
+
+      const copy = (arr) => console.log(arr);
+
+      // Crear una función que devuelva el promedio de un arreglo, en caso de
+      // que el arreglo esté vacío debe devolver cero.
+
+      const average = (arr) => {
+        let number = 0;
+        for (let i = 0; i < arr.length; i++) {
+          number += arr[i] / arr.length;
+        }
+        console.log(number);
+      };
+
+      // Crear una función que calcule el promedio dentro de un arreglo pero
+      // dentro de un rango, esta función recibe el arreglo, un punto de
+      // partida y uno de termino y devuelve el promedio de los valores dentro
+      // del rango especificado
+
+      const averageRange = (arr, a, b) => {
+        let number = 0;
+        for (let i = a; i <= b; i++) {
+          number += arr[i] / arr.length;
+        }
+        console.log(number);
+      };
+
+      //   Crear un objeto literal persona con nombre y edad y una método
+      //     que determine si es mayor de edad o no.
+
+      const people = {
+        name: "javier",
+        age: 18,
+      };
+
+      const isOlder = (guy) => {
+        if (guy.age >= 18) {
+          console.log("La persona es mayor de edad");
+        } else {
+          console.log("La persona no es mayor de edad");
+        }
+      };
+
+      //   Crear una función constructora que permita crear objetos del tipo
+      //     personas pasándole solo un nombre y edad, agregar el método.
+
+      const name = "javier";
+      const age = 30;
+
+      const createObject = (x, y) => {
+        let object = {
+          name: x,
+          age: y,
+        };
+        console.log(object);
+      };
+
+      //   Crear un array que contenga varios objetos persona
+
+      const peopleList = [
+        {
+          name: "javier",
+          age: 18,
+        },
+        {
+          name: "natalia",
+          age: 54,
+        },
+        {
+          name: "gaerg",
+          age: 12,
+        },
+        {
+          name: "bf",
+          age: 84,
+        },
+      ];
+
+      //   Crear una función que reciba el array y devuelva la edad promedio
+      //     del grupo de personas.
+
+      const peopleAverange = (list) => {
+        let averange = 0;
+        for (let i = 0; i < list.length; i++) {
+          averange += list[i].age / list.length;
+        }
+        console.log(averange);
+      };
+
+      // Crear una función constructora que devuelva objetos del tipo
+      // teléfono, como argumento debe recibir un número de teléfono, el
+      // objeto creado tiene el número de llamadas que debe ser
+      // inicializado en cero y un método llamar que debe aumentar el
+      // número de llamados en uno.
+
+      let phoneNumbers = [
+        {
+          number: 9548542,
+          calls: 0,
+        },
+        {
+          number: 8458712,
+          calls: 0,
+        },
+        {
+          number: 584854,
+          calls: 0,
+        },
+        {
+          number: 5477571,
+          calls: 0,
+        },
+        {
+          number: 8221,
+          calls: 0,
+        },
+        {
+          number: 857,
+          calls: 0,
+        },
+        {
+          number: 09985621,
+          calls: 2,
+        },
+        {
+          number: 09954821,
+          calls: 0,
+        },
+      ];
+
+      const callNumber = (number) => {
+        let findNumber = phoneNumbers.findIndex(
+          (element) => element.number === number
+        );
+        console.log(findNumber);
+        if (findNumber) {
+          phoneNumbers[findNumber].calls += 1;
+          console.log(
+            "Se hizo una llamada al numero " +
+              number +
+              " ,llamadas totales: " +
+              phoneNumbers[findNumber].calls
+          );
+          console.log(phoneNumbers[findNumber]);
+        } else {
+          console.log("Numero incorrecto");
+        }
+      };
+
+      //  Utilizando getElementById y innerHTML transformar el
+      // emoticon en un smiley
+      // <p id="demo"> :( </p>
+
+      const changeSmile = (id) => {
+        document.getElementById(id).innerHTML = ":)";
+      };
+
+      //   Utilizando la instrucción setInterval mostrar la hora exacta y
+      //     actualizarla cada segundo.
+
+      //   const showTime = () => {
+      //     const title = document.createElement("h1");
+      //     title.innerHTML = setInterval(1000, 1000);
+      //     document.body.appendChild(title);
+      //   };
+      //   showTime();
+      // let time = document.createElement("h1").setAttribute("id", "time");
+      // console.log(time);
+      // document.body.appendChild(time);
+
+      const showTime = () => {
+        let date = new Date();
+        let hour = date.getHours();
+        let minute = date.getMinutes();
+        let second = date.getSeconds();
+        document.getElementById("time").innerHTML =
+          hour + ":" + minute + ":" + second;
+      };
+
+      setInterval(showTime, 1000);
+    </script>
+  </body>
+</html>
