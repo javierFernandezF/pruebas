@@ -1,5 +1,6 @@
 import "./SearchList.css";
 import ReactAudioPlayer from "react-audio-player";
+import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 
 const SearchList = ({
   offset,
@@ -34,26 +35,52 @@ const SearchList = ({
   return (
     <div className="search-list">
       {offset === 5 ? (
-        <button>Previous page</button>
+        <button className="button-list previous-page">Previous page</button>
       ) : (
-        <button onClick={previousPage}>Previous page</button>
+        <button className="button-list previous-page" onClick={previousPage}>
+          Previous page
+        </button>
       )}
-      <ul>
-        {content != ""
-          ? content.map((song) => {
-              return (
-                <li key={song.id} className="song">
-                  <h1>Artist: {song.artistName}</h1>
-                  <p>Disc: {song.albumName}</p>
-                  <p>Song's name: {song.name}</p>
-                  <ReactAudioPlayer src={song.previewURL} controls />
-                </li>
-              );
-            })
-          : null}
-      </ul>
-      <div>Pag {offset / 5}</div>
-      <button onClick={nextPage}>Next page</button>
+      <Droppable droppableId="searchList">
+        {(droppableProvided) => (
+          <ul
+            className="ul-search"
+            {...droppableProvided.droppableProps}
+            ref={droppableProvided.innerRef}
+          >
+            {content != ""
+              ? content.map((song, index) => {
+                  return (
+                    <Draggable
+                      key={song.id}
+                      draggableId={song.id}
+                      index={index}
+                    >
+                      {(draggableProvided) => (
+                        <li
+                          {...draggableProvided.draggableProps}
+                          ref={draggableProvided.innerRef}
+                          {...draggableProvided.dragHandleProps}
+                          className="song"
+                        >
+                          <h1>Artist: {song.artistName}</h1>
+                          <p>Disc: {song.albumName}</p>
+                          <p>Song's name: {song.name}</p>
+                          <ReactAudioPlayer src={song.previewURL} controls />
+                        </li>
+                      )}
+                    </Draggable>
+                  );
+                })
+              : null}
+            {droppableProvided.placeholder}
+          </ul>
+        )}
+      </Droppable>
+      <div className="search-page">Pag {offset / 5}</div>
+      <button className="button-list next-page" onClick={nextPage}>
+        Next page
+      </button>
     </div>
   );
 };

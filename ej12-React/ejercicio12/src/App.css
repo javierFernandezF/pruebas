@@ -2,13 +2,25 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+#root {
+  height: 100vh;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    135deg,
+    rgba(2, 0, 36, 1) 9%,
+    rgba(231, 50, 23, 1) 52%,
+    rgba(255, 0, 241, 1) 97%
+  );
 }
 .App {
-  height: 80vh;
-  margin: 10vh 20%;
+  min-height: 80vh;
+  margin: 2vh 10vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.2fr 1fr;
+  gap: 5px;
 }
 .search-input {
   grid-column: 1/3;

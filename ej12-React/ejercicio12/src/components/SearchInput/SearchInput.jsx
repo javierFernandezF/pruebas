@@ -27,18 +27,19 @@ const SearchInput = ({
     // .then(setContentOK(true));
   };
 
-  // useEffect(() => {
-  //   getMusic();
-  // }, []);
-
   return (
     <div className="search-input">
-      <h1>Search your favorite music!</h1>
+      <h1 className="search-title">Search your favorite music!</h1>
+
       <input
-        placeholder="Input your favorite artist!"
+        className="input-search"
+        onDragStart={getMusic}
+        placeholder="Input your favorite song!"
         onChange={(e) => setSearch(e.target.value)}
       ></input>
-      <button onClick={getMusic}>Search</button>
+      <button className="search-button" onClick={getMusic}>
+        Search
+      </button>
     </div>
   );
 };
