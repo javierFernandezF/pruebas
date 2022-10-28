@@ -1,0 +1,65 @@
+Subir en UN ÚNICO ARCHIVO .TXT (NO PDF, NO WORD) que incluya el nombre del autor.
+Una empresa de pintores de casas en todo el país necesita un sistema para la gestión y seguimiento de
+los contratos de pintura realizados en los domicilios de sus clientes.
+En el sistema debe ser posible:
+A. Registrar pintor. Se indica nombre, edad y celular.
+B. Registrar cliente. Se indica nombre, dirección y departamento (1-19).
+C. Registrar contrato. Cada contrato corresponde a un cliente y es asignado a varios pintores. Se indica
+también la cantidad de metros cuadrados totales a pintar y el costo total del contrato.
+D. Registrar jornada de pintura. Se indica el contrato, el pintor, la cantidad de metros cuadrados
+realizados en la jornada, una descripción de lo realizado (ej. "pintura de portón") y el problema
+principal detectado (número entre 0 y 9, 0 indica sin problemas). Se asume que el pintor es uno de
+los asignados al contrato.
+E. Listado de contratos en curso. Un contrato se considera cumplido cuando la suma del total de
+metros cuadrados pintados entre todas sus jornadas coincide o supera al contratado. En otro caso,
+se considera que está en curso el contrato. Obtener un listado de los contratos en curso, ordenados
+por departamento creciente.
+F. Consulta de posibles pintores sin contrato. Se indica un contrato y quiere obtenerse la lista de
+pintores de ese contrato que, de eliminarse el contrato, quedarían sin ningún otro contrato
+asignado.
+G. Consulta de problemas. Se recibe un subconjunto de problemas (ejemplo: [4,1,6,3]) y debe retornar
+cuál/cuáles de ellos fue/ron los que aparecieron más frecuentemente entre las jornadas de pintura.
+Si no apareció ninguno de ellos, indicarlo. 
+
+
+class Pintor {
+constructor(nombre, idnombre, edad,
+celular) { this.nombre = nombre;
+this.idnombre = idnombre;
+this.edad = edad;
+ this.celular = celular;
+}
+}
+
+class Cliente {
+constructor(nombrecliente, idcliente, direccioncliente,
+depto) { this.nombrecliente = nombrecliente;
+this.idcliente = idcliente;
+this.direccion = direccion;
+ this.depto = depto; // 1 a 19
+}
+}
+
+class Contrato{
+constructor(idcliente, listaPintores,
+m2, costo){
+this.idcliente = idcliente; // objeto
+cliente this.listaPintores=
+listaPintores; // array
+ // de objetos pintor this.m2
+= m2; this.costo= costo;
+}
+}
+
+class Jornada{
+constructor(contrato, pintor, m2,
+descripcion, problema){
+this.contrato= contrato; // objeto
+contrato this.pintor = pintor; //
+objeto pintor
+ this.m2= m2;
+ this.descripcion = descripcion;
+this.problema = problema; //
+número del 0 al 9
+ }
+} 
