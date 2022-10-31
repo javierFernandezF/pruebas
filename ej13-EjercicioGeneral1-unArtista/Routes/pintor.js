@@ -1,4 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const { ingresarNuevoPintor } = require("../Controllers/pintor");
 
-module.exports = { router };
+router.post("/nuevopintor", ingresarNuevoPintor);
+
+module.exports = router;

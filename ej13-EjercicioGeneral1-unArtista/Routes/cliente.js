@@ -1,4 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const { nuevocliente } = require("../Controllers/cliente");
 
-module.exports = { router };
+router.post("/nuevocliente", nuevocliente);
+
+module.exports = router;

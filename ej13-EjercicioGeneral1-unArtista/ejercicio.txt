@@ -23,10 +23,10 @@ Si no apareció ninguno de ellos, indicarlo.
 
 
 class Pintor {
-constructor(nombre, idnombre, edad,
-celular) { this.nombre = nombre;
-this.idnombre = idnombre;
-this.edad = edad;
+constructor(id, nombre,
+celular) { 
+this.id = id;
+this.nombre= nombre;
  this.celular = celular;
 }
 }
