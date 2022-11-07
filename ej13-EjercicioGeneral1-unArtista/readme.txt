@@ -33,3 +33,10 @@ problema int
 
 insert into pintor (nombre, celular) 
 values ('javier',091245882);
+
+
+
+
+
+
+insert into contrato (idcliente, listapintores, m2, costo) values ('2', '{2,3,5}', '450','7600' )

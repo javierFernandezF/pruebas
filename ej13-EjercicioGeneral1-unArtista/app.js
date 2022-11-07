@@ -5,7 +5,7 @@ let port = 3500;
 
 const cliente = require("./Routes/cliente");
 const pintor = require("./Routes/pintor");
-// const contacto = require("./Routes/contrato");
+const contrato = require("./Routes/contrato");
 // const pintoresSinContrato = require("./Routes/pintoresSinContrato");
 // const problemasHabituales = require("./Routes/problemasHabituales");
 
@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 
 app.use("/cliente", cliente);
 app.use("/pintor", pintor);
-// app.use("/contacto", contacto);
+app.use("/contrato", contrato);
 // app.use("/pintoresSinContrato", pintoresSinContrato);
 // app.use("/problemasHabituales", problemasHabituales);
 
