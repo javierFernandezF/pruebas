@@ -27,8 +27,14 @@ idjornada serial primary key,
 idcontrato int,
 idpintor int,
 m2 int,
-descripcion varchar,
+descripcion varchar(200),
 problema int
+)
+
+create table estadodecontrato (
+idcontrato int,
+m2totales int,
+m2hechos int
 )
 
 insert into pintor (nombre, celular) 
